@@ -19,6 +19,22 @@ class SlurpServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('lotsofcode/slurp');
+
+    include __DIR__.'/../../routes.php';
+
+
+    $this->app['slurp'] = $this->app->share(function($app) {
+
+      $config = $app->config->get('slurp::config');
+
+      $push = ['base_path' => base_path(), 'environment' => $app['env']];
+
+      foreach ($push as $add => $item) {
+        $config[$add] = $item;
+      }
+
+      return new SlurpParser();
+    });
 	}
 
 	/**
