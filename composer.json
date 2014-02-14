@@ -1,0 +1,23 @@
+{
+    "name": "lotsofcode/slurp",
+    "description": "",
+    "authors": [
+        {
+            "name": "Del Harvey",
+            "email": "dellhrv@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Lotsofcode\\Slurp\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
